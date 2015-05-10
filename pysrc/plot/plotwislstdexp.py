@@ -4,20 +4,22 @@ Created on Apr 8, 2015
 @author: A. Rupam Mahmood
 '''
 
+import os
 import sys
+sys.path.insert(0, os.getcwd())
 from pysrc.plot import plotdataprocess
 import matplotlib.pyplot as ppl
 import pickle
 
 def main():
-  path      = "../../results/wislstdexperiments/oislstd/" 
+  path      = "./results/wislstdexperiments/oislstd/" 
   sys.argv  = ["", "10", path, \
               "2", "inita", "lambda", \
               "1", "lambda"]
   plotdataprocess.main()
   oisdata   = pickle.load(file(path+"perfvslambda.plot"))
-  path      = "../../results/wislstdexperiments/wislstd/" 
-  sys.argv  = ["", "10", "../../results/wislstdexperiments/wislstd/", \
+  path      = "./results/wislstdexperiments/wislstd/" 
+  sys.argv  = ["", "10", path, \
               "2", "inita", "lambda", \
               "1", "lambda"]
   plotdataprocess.main()
